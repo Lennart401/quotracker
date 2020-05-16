@@ -1,0 +1,82 @@
+import React, { useEffect } from 'react';
+import NotFoundPage from "./pages/top-level/not-found-page";
+import AppHeader from "./components/app/app-header";
+import AllTargetsPage from "./pages/top-level/all-targets-page";
+import Target from "./pages/top-level/target";
+import "./App.css";
+import { usePath, useRoutes } from "hookrouter";
+import HomePage from "./pages/top-level/home-page";
+import { useAuth0 } from "./react-auth0-spa";
+import LogoutPage from "./pages/top-level/logout-page";
+import ErrorSnackbar from "./components/app/error-snackbar";
+import { createMuiTheme } from "@material-ui/core";
+import orange from "@material-ui/core/colors/orange";
+import { ThemeProvider } from "@material-ui/styles";
+import blue from "@material-ui/core/colors/blue";
+import MainLoader from "./components/app/main-loader";
+
+const theme = createMuiTheme({
+    palette: {
+        primary: blue,
+        secondary: orange,
+    },
+});
+
+const routes = {
+    "/": () => <HomePage/>,
+    "/alltargets": () => <AllTargetsPage/>,
+    "/target*": () => <Target/>,
+    "/logout": () => <LogoutPage/>,
+};
+
+const publicPaths = [
+    "/",
+    "/logout",
+    "/404"
+];
+
+const App = () => {
+    const path = usePath();
+    const {loading, isAuthenticated, loginWithRedirect} = useAuth0();
+    //const error = useErrorMessage();
+
+    // only takes effect after the page is rendered an the content has been attempted to be loaded
+    useEffect(() => {
+        // if the content is loading, the user is already authenticated or you are on one of the public pages --> do nothing
+        if (loading || isAuthenticated || publicPaths.includes(path)) {
+            return;
+        }
+
+        // start the login procedure, but as the state it sets the current path. the user will be redirected to
+        // this path once the login is successful
+        const awaitLogin = async () => {
+            await loginWithRedirect({
+                appState: {
+                    targetUrl: window.location.pathname
+                }
+            });
+        };
+        awaitLogin();
+    }, [loading, isAuthenticated, loginWithRedirect, path]);
+
+    const routeResult = useRoutes(routes);
+
+    if (loading) {
+        return (
+            <ThemeProvider theme={theme}>
+                <MainLoader/>
+            </ThemeProvider>
+        );
+    }
+
+    return (
+        <ThemeProvider theme={theme}>
+            <AppHeader/>
+            {/*<ErrorSnackbar open={!!error} error={error}/>*/}
+            <ErrorSnackbar/>
+            {routeResult || <NotFoundPage/>}
+        </ThemeProvider>
+    );
+};
+
+export default App;

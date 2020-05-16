@@ -1,0 +1,70 @@
+.cs-row {
+    margin-bottom: 16px!important;
+}
+.cs-caption {
+    margin-bottom: 8px!important;
+}
+
+.cs-button-group > * {
+    margin: 4px!important;
+}
+
+.page-title {
+    margin-top: 52px;
+    margin-bottom: 24px;
+}
+.page-title-2 {
+    margin-top: 32px;
+    margin-bottom: 20px;
+}
+
+.link-no-style {
+    text-decoration: none;
+}
+.text-white {
+    color: white;
+}
+.text-black {
+    color: black;
+}
+
+@keyframes blink {
+    0% {
+        opacity: .4;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .4;
+    }
+}
+
+.animated-dots span {
+    animation-name: blink;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.animated-dots span:nth-child(2) {
+    animation-delay: .3s;
+}
+
+.animated-dots span:nth-child(3) {
+    animation-delay: .6s;
+}
+
+/* old classes */
+
+.classes-title {
+    flex-grow: 1;
+}
+
+#root {
+    flex-grow: 1;
+}
+
+body {
+    margin: 0;
+}

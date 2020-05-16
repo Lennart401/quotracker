@@ -21,7 +21,7 @@ import {
     usePopupOpen,
     // eslint-disable-next-line no-unused-vars
     useUser
-} from "./redux/authentication";
+} from "./logic/state-management/authentication";
 
 const DEFAULT_REDIRECT_CALLBACK = () =>
     window.history.replaceState({}, document.title, window.location.pathname);

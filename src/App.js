@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
-import NotFoundPage from "./pages/top-level/not-found-page";
-import AppHeader from "./components/app/app-header";
-import AllTargetsPage from "./pages/top-level/all-targets-page";
-import Target from "./pages/top-level/target";
+import NotFoundPage from "./ui/pages/top-level/not-found-page";
+import AppHeader from "./ui/components/root/app-header";
+import AllTargetsPage from "./ui/pages/top-level/all-targets-page";
+import Target from "./ui/pages/top-level/target";
 import "./App.css";
 import { usePath, useRoutes } from "hookrouter";
-import HomePage from "./pages/top-level/home-page";
+import HomePage from "./ui/pages/top-level/home-page";
 import { useAuth0 } from "./react-auth0-spa";
-import LogoutPage from "./pages/top-level/logout-page";
-import ErrorSnackbar from "./components/app/error-snackbar";
+import LogoutPage from "./ui/pages/top-level/logout-page";
+import ErrorSnackbar from "./ui/components/root/error-snackbar";
 import { createMuiTheme } from "@material-ui/core";
 import orange from "@material-ui/core/colors/orange";
 import { ThemeProvider } from "@material-ui/styles";
 import blue from "@material-ui/core/colors/blue";
-import MainLoader from "./components/app/main-loader";
+import MainLoader from "./ui/components/root/main-loader";
 
 const theme = createMuiTheme({
     palette: {

@@ -7,7 +7,7 @@ import { Auth0Provider } from "./react-auth0-spa";
 import config from "./auth_config.json";
 import { navigate } from "hookrouter";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import { store } from "./logic/state-management/store/store";
 import { loadingBarReducer } from "react-redux-loading-bar";
 import moment from "moment";
 import 'moment/locale/de';

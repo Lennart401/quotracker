@@ -1,7 +1,5 @@
 import CardContent from "@material-ui/core/CardContent";
-import { navigate } from "hookrouter";
 import Typography from "@material-ui/core/Typography";
-import { LinkedChip } from "../../shared/links";
 import Avatar from "@material-ui/core/Avatar";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
@@ -13,6 +11,7 @@ import { TARGET_DELETE_DIALOG_NAME, TARGET_EDIT_DIALOG_NAME } from "../../../pag
 import CardActionArea from "@material-ui/core/CardActionArea";
 import { usePermissions } from "../../../../logic/state-management/permissions";
 import Chip from "@material-ui/core/Chip";
+import { navigateWithDelay } from "../../../../logic/navigation/navigate-with-delay";
 
 const useStyles = makeStyles((theme) => ({
     cardSubheader: {
@@ -33,7 +32,7 @@ const TargetCard = (props) => {
 
     return (
         <Card className={classes.infoCard}>
-            <CardActionArea onClick={() => navigate(`/target/${id}/overview`)}>
+            <CardActionArea onClick={() => navigateWithDelay(`/target/${id}/overview`)}>
                 <CardContent>
                     <Typography variant="h5">
                         {info.title}

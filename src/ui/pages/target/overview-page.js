@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { useTitle } from "hookrouter";
 import PageWrapper from "../../components/shared/page-wrapper";
 import OverviewHeader from "../../components/target/overview/overview-header";
@@ -7,8 +7,13 @@ import OverviewStats from "../../components/target/overview/overview-stats";
 import { useOverview } from "../../../logic/state-management/api/hooks";
 import { updateTarget } from "../../../logic/state-management/api/actions";
 import EditTargetDialog from "../../components/shared/target/edit-target-dialog";
-import { MAX_DESCRIPTION_LENGTH, MAX_TITLE_LENGTH, TARGET_EDIT_DIALOG_NAME } from "../top-level/all-targets-page";
+import {
+    MAX_DESCRIPTION_LENGTH,
+    MAX_TITLE_LENGTH,
+    TARGET_EDIT_DIALOG_NAME
+} from "../top-level/all-targets-page";
 import { usePermissions } from "../../../logic/state-management/permissions";
+import { hideDialog } from "../../../logic/state-management/dialogs";
 
 const summarizeQuotes = (quotes, stats) => {
     let total = 0;
@@ -37,11 +42,17 @@ const OverviewPage = (props) => {
     const target = useOverview(props.targetId);
     const permissions = usePermissions(target?.users ? target.users : []);
 
+    useLayoutEffect(() => {
+        return () => {
+            hideDialog(TARGET_EDIT_DIALOG_NAME);
+        };
+    }, []);
+
     return (
         <PageWrapper>
             {(target && target.users && target.info && target.quotes && target.stats) && (
                 <div>
-                    <OverviewHeader id={props.targetId} title={target.info.title} description={target.info.description}
+                    <OverviewHeader targetId={props.targetId} title={target.info.title} description={target.info.description}
                                     users={target.users ? target.users : []} permissions={permissions}/>
                     <OverviewSummary createdOn={target.info.createdOn} permissions={permissions}
                                      quotesSummarized={summarizeQuotes(target.quotes, target.stats)}/>
@@ -56,8 +67,7 @@ const OverviewPage = (props) => {
                                       maxDescriptionLength={MAX_DESCRIPTION_LENGTH}
                                       saveAction={(targetId, title, description) => {
                                           updateTarget(targetId, {title: title, description: description});
-                                      }}
-                    />
+                                      }}/>
                 </div>
             )}
         </PageWrapper>

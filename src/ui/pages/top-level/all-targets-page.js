@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useTitle } from "hookrouter";
 import TargetCard from "../../components/top-level/all-targets/target-card";
 import PageTitle from "../../components/shared/page-title";
@@ -21,6 +21,13 @@ const AllTargetsPage = () => {
     useTitle(`${allTargetsPageTitle} - SLv2`);
     const targets = useTargets();
     const deleteDialogState = useDialogState(TARGET_DELETE_DIALOG_NAME);
+
+    useLayoutEffect(() => {
+        return () => {
+            hideDialog(TARGET_EDIT_DIALOG_NAME);
+            hideDialog(TARGET_DELETE_DIALOG_NAME);
+        };
+    }, []);
 
     return (
         <PageWrapper>
@@ -55,7 +62,7 @@ const AllTargetsPage = () => {
                                    }}
                                    positiveAction={() => {
                                        hideDialog(TARGET_DELETE_DIALOG_NAME);
-                                       deleteTarget(deleteDialogState?.id)
+                                       deleteTarget(deleteDialogState?.id);
                                    }}/>
                 </div>
             )}

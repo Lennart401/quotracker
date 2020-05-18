@@ -2,7 +2,7 @@ import { store } from "../store/store";
 import { getTestInitialState, makeActionName } from "../store/helpers";
 import produce from "immer";
 
-const initialState = getTestInitialState();//{};
+const initialState = {};//getTestInitialState();//{};
 export const apiv2StoreKey = "apiv2";
 
 export const features = {
@@ -43,7 +43,7 @@ const reducers = {
         draft[targetId].info = {...draft[targetId]?.info, ...info};
     }),
     [features.MERGE_USERS]: (state, {targetId, user}) => produce(state, draft => {
-        let index = draft[targetId].users.guests.findIndex(item => item.id === user.id)
+        let index = draft[targetId].users.guests.findIndex(item => item.id === user.id);
         if (index >= 0) {
             draft[targetId].users.guests[index] = {...draft[targetId].users.guests[index], ...user};
         } else {
@@ -84,6 +84,11 @@ const reducers = {
 
     [features.FILTER_OUT_TARGET]: (state, targetId) => produce(state, draft => {
         delete draft[targetId];
+    }),
+    [features.FILTER_OUT_USER]: (state, {targetId, userId}) => produce(state, draft => {
+        let index = draft[targetId].users.guests.findIndex(item => item.id === userId);
+        if (index >= 0)
+            draft[targetId].users.guests.splice(index, 1);
     }),
     [features.FILTER_OUT_QUOTE]: (state, {targetId, quoteId}) => produce(state, draft => {
         // draft[targetId].quotes = Object.keys(draft[targetId].quotes).filter(key => key !== quoteId).reduce((obj, key) => {

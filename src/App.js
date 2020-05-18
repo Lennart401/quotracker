@@ -2,18 +2,18 @@ import React, { useEffect } from 'react';
 import NotFoundPage from "./ui/pages/top-level/not-found-page";
 import AppHeader from "./ui/components/root/app-header";
 import AllTargetsPage from "./ui/pages/top-level/all-targets-page";
-import Target from "./ui/pages/top-level/target";
+import TargetNestedRouter from "./ui/pages/top-level/target-nested-router";
 import "./App.css";
 import { usePath, useRoutes } from "hookrouter";
 import HomePage from "./ui/pages/top-level/home-page";
 import { useAuth0 } from "./react-auth0-spa";
 import LogoutPage from "./ui/pages/top-level/logout-page";
-import ErrorSnackbar from "./ui/components/root/error-snackbar";
 import { createMuiTheme } from "@material-ui/core";
 import orange from "@material-ui/core/colors/orange";
 import { ThemeProvider } from "@material-ui/styles";
 import blue from "@material-ui/core/colors/blue";
 import MainLoader from "./ui/components/root/main-loader";
+import StateSnackbar from "./ui/components/root/state-snackbar";
 
 const theme = createMuiTheme({
     palette: {
@@ -25,7 +25,7 @@ const theme = createMuiTheme({
 const routes = {
     "/": () => <HomePage/>,
     "/alltargets": () => <AllTargetsPage/>,
-    "/target*": () => <Target/>,
+    "/target*": () => <TargetNestedRouter/>,
     "/logout": () => <LogoutPage/>,
 };
 
@@ -73,7 +73,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
             <AppHeader/>
             {/*<ErrorSnackbar open={!!error} error={error}/>*/}
-            <ErrorSnackbar/>
+            <StateSnackbar errorState="global"/>
             {routeResult || <NotFoundPage/>}
         </ThemeProvider>
     );

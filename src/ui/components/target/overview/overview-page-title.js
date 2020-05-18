@@ -13,7 +13,7 @@ const OverviewPageTitle = (props) => {
                     setDialogInfo(TARGET_EDIT_DIALOG_NAME, {
                         title: props.title,
                         description: props.description,
-                        id: props.id
+                        id: props.targetId
                     });
                     showDialog(TARGET_EDIT_DIALOG_NAME);
                 }} style={{marginLeft: 16}}><EditIcon/></IconButton>

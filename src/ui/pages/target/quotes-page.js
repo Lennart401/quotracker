@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { useTitle } from "hookrouter";
 import PageWrapper from "../../components/shared/page-wrapper";
 import PageTitle from "../../components/shared/page-title";
@@ -23,6 +23,13 @@ const QuotesPage = (props) => {
     const dialogState = useDialogState(QUOTES_CONFIRM_DIALOG_NAME);
     const users = useUsers(props.targetId);
     const permissions = usePermissions(users);
+
+    useLayoutEffect(() => {
+        return () => {
+            hideDialog(QUOTES_EDIT_DIALOG_NAME);
+            hideDialog(QUOTES_CONFIRM_DIALOG_NAME);
+        };
+    }, []);
 
     return (
         <PageWrapper>

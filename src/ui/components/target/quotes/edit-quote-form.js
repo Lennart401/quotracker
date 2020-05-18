@@ -5,9 +5,10 @@ import { TextField } from "@material-ui/core";
  * @param dialogState {null|{quote: {string}}}
  * @param maxQuoteLength {number}
  * @param label {string}
+ * @param variant {string}
  * @returns {{checkSave: (function(): boolean), quote: string, element: *}}
  */
-export const useEditQuotesForm = (dialogState, maxQuoteLength, label) => {
+export const useEditQuotesForm = (dialogState, maxQuoteLength, label, variant = "outlined") => {
     const [enteredText, setEnteredText] = useState("");
     const [error, setError] = useState(false);
     const [helperText, setHelperText] = useState("");
@@ -44,7 +45,7 @@ export const useEditQuotesForm = (dialogState, maxQuoteLength, label) => {
         quote: enteredText,
         element: (
             <TextField label={label}
-                       variant="outlined"
+                       variant={variant}
                        fullWidth
                        size="small"
                        error={error}

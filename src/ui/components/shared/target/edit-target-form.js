@@ -14,6 +14,7 @@ export const useEditTargetForm = (dialogState, maxTitleLength, maxDescriptionLen
     const [errorTitle, setErrorTitle] = useState(false);
     const [errorDescription, setErrorDescription] = useState(false);
 
+    // @TODO simplify helper: use an expression, i.e. helperText={errorTitle ? "...Text..." : ""}
     const [helperTextTitle, setHelperTextTitle] = useState("");
     const [helperTextDescription, setHelperTextDescription] = useState("");
 

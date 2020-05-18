@@ -13,10 +13,19 @@ import { getStateOnce } from "./hooks";
 axios.defaults.baseURL = "http://localhost:8080/api/v2";
 axios.defaults.timeout = 5000;
 
-const DISABLE_SERVER_ACCESS = true;
+const DISABLE_SERVER_ACCESS = false;
+
+/**
+ * @typedef Endpoint
+ * @type {object}
+ * @property {function({string}): string} url
+ * @property {function(object, ?string)} handler
+ * @property {?function({string}): boolean} shouldShowLoading
+ */
 
 export const endpoints = {
     GET: {
+        /** @type Endpoint */
         TARGETS: {
             url: () => "/targets",
             handler: (result) => {
@@ -30,8 +39,8 @@ export const endpoints = {
                 oneTimePoll(eps, properties);
             },
             shouldShowLoading: (props) => Object.entries(getStateOnce()) <= 1
-
         },
+        /** @type Endpoint */
         TARGET_id_INFO: {
             url: (props) => `/target/${props.targetId}/info`,
             handler: (result) => {
@@ -39,6 +48,7 @@ export const endpoints = {
             },
             shouldShowLoading: (props) => !getStateOnce()[props.targetId]?.info
         },
+        /** @type Endpoint */
         TARGET_id_USERS: {
             url: (props) => `/target/${props.targetId}/users`,
             handler: (result) => {
@@ -46,6 +56,7 @@ export const endpoints = {
             },
             shouldShowLoading: (props) => !getStateOnce()[props.targetId]?.users
         },
+        /** @type Endpoint */
         TARGET_id_QUOTES: {
             url: (props) => `/target/${props.targetId}/quotes`,
             handler: (result) => {
@@ -53,6 +64,7 @@ export const endpoints = {
             },
             shouldShowLoading: (props) => !getStateOnce()[props.targetId]?.quotes
         },
+        /** @type Endpoint */
         TARGET_id_STATS: {
             url: (props) => `/target/${props.targetId}/stats`,
             handler: (result) => {
@@ -60,6 +72,7 @@ export const endpoints = {
             },
             shouldShowLoading: (props) => !getStateOnce()[props.targetId]?.stats
         },
+        /** @type Endpoint */
         TARGET_id_RECORDS: {
             url: (props) => `/target/${props.targetId}/records`,
             handler: (result) => {
@@ -67,6 +80,7 @@ export const endpoints = {
             },
             shouldShowLoading: (props) => !getStateOnce()[props.targetId]?.records
         },
+        /** @type Endpoint */
         TARGET_id_RECORDS_from_to: {
             url: (props) => `/target/${props.targetId}/records?from=${props.from}&to=${props.to}`,
             handler: (result) => {
@@ -77,16 +91,19 @@ export const endpoints = {
     },
 
     PATCH: {
+        /** @type Endpoint */
         TARGET_id: {
             method: "patch",
             url: (props) => `/target/${props.targetId}`,
             handler: (result) => endpoints.GET.TARGET_id_INFO.handler(result)
         },
+        /** @type Endpoint */
         TARGET_id_QUOTE_id: {
             method: "patch",
             url: (props) => `/target/${props.targetId}/quote/${props.quoteId}`,
             handler: (result) => endpoints.GET.TARGET_id_QUOTES.handler(result)
         },
+        /** @type Endpoint */
         TARGET_id_USER_id: {
             method: "patch",
             url: (props) => `/target/${props.targetId}/user/${props.userId}`,
@@ -95,6 +112,7 @@ export const endpoints = {
     },
 
     POST: {
+        /** @type Endpoint */
         TARGET: {
             method: "post",
             url: () => `/target`,
@@ -108,16 +126,19 @@ export const endpoints = {
             },
             shouldShowLoading: () => true
         },
+        /** @type Endpoint */
         TARGET_id_QUOTE: {
             method: "post",
             url: (props) => `/target/${props.targetId}/quote`,
             handler: (result) => endpoints.GET.TARGET_id_QUOTES.handler(result)
         },
+        /** @type Endpoint */
         TARGET_id_QUOTE_id: {
             method: "post",
             url: (props) => `/target/${props.targetId}/quote/${props.quoteId}`,
             handler: (result) => endpoints.GET.TARGET_id_STATS.handler(result)
         },
+        /** @type Endpoint */
         TARGET_id_USER: {
             method: "post",
             url: (props) => `/target/${props.targetId}/user`,
@@ -126,6 +147,7 @@ export const endpoints = {
     },
 
     DELETE: {
+        /** @type Endpoint */
         TARGET_id: {
             method: "delete",
             url: (props) => `/target/${props.targetId}`,
@@ -134,16 +156,19 @@ export const endpoints = {
             },
             shouldShowLoading: () => true
         },
+        /** @type Endpoint */
         TARGET_id_QUOTE_id: {
             method: "delete",
             url: (props) => `/target/${props.targetId}/quote/${props.quoteId}`,
             handler: (result) => endpoints.GET.TARGET_id_QUOTES.handler(result)
         },
+        /** @type Endpoint */
         TARGET_id_QUOTE_id_RECORD: {
             method: "delete",
             url: (props) => `/target/${props.targetId}/quote/${props.quoteId}/record`,
             handler: (result) => endpoints.GET.TARGET_id_STATS.handler(result)
         },
+        /** @type Endpoint */
         TARGET_id_USER_id: {
             method: "delete",
             url: (props) => `/target/${props.targetId}/user/${props.userId}`,
@@ -155,7 +180,7 @@ export const endpoints = {
 /**
  * Subscribe to make poll requests in regular intervals. Use with useEffect()-hook.
  * Returns function to unsubscribe.
- * @param {[{url: (function({}): {string}), handler: (function({}))}]} endpoints a list of endpoints to poll
+ * @param {[Endpoint]} endpoints a list of endpoints to poll
  * @param {{interval: {number}}|[{interval: {number}}]} properties one properties-object for all requests or seperate
  *                                                      ones for each request. interval should be provided in seconds.
  *                                                      if array, only the first interval will be taken into account.
@@ -183,7 +208,7 @@ export const poll = (endpoints, properties) => {
 
 /**
  * Makes a single poll request using redux-thunk.
- * @param {[{url: (function({}): {string}), handler: (function({}))}]} endpoints a list of endpoints to poll
+ * @param {[Endpoint]} endpoints a list of endpoints to poll
  * @param {{}|[]} properties one properties-object for all requests or seperate ones for each request.
  */
 export const oneTimePoll = (endpoints, properties) => {
@@ -241,10 +266,11 @@ export const oneTimePoll = (endpoints, properties) => {
 
 /**
  * Sends a request to the server and awaits its answer, which will be merged into the targets
- * @param {{method: {string}, url: (function({}): {string}), handler: (function({})|function({}, {string}))}} endpoint either a patch, post or delete endpoint from endpoints
+ * @param {Endpoint} endpoint either a patch, post or delete endpoint from endpoints
  * @param {{}} properties properties for the request, e.g. the targetId, request-body
+ * @param {function(string)} callback
  */
-export const makeRequest = (endpoint, properties) => {
+export const makeRequest = (endpoint, properties, callback = null) => {
     if (DISABLE_SERVER_ACCESS) return;
 
     store.dispatch(async (dispatch) => {
@@ -274,11 +300,14 @@ export const makeRequest = (endpoint, properties) => {
                 endpoint.handler(response.data.data);
             }
 
+            if (callback) callback(response.data.status);
+
             console.log(response.status);
             console.log(response.data);
             hideLoadingBar();
         })
         .catch((error) => {
+            if (callback) callback(error.response?.data?.status);
             handleError(error);
             hideLoadingBar();
         });

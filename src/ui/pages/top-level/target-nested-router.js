@@ -15,9 +15,9 @@ const routes = {
   "/:tid/statistics": ({tid}) => <StatsPage targetId={tid}/>,
 };
 
-const Target = () => {
+const TargetNestedRouter = () => {
   const routeResult = useRoutes(routes);
   return routeResult || <NotFoundPage/>;
 };
 
-export default Target;
+export default TargetNestedRouter;

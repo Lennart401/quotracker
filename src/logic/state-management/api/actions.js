@@ -117,8 +117,32 @@ export const createRecord = (targetId, quoteId) => {
     });
 };
 
-export const addUser = (targetId, {userId, canSubmitRecords, canEdit}) => {
+// export const addUserLocally = (targetId, {userId, email, canSubmitRecords, canEdit}) => {
+//     store.dispatch({
+//         type: features.MERGE_USERS, payload: {
+//             targetId: targetId,
+//             user: {
+//                 id: userId,
+//                 name: email,
+//                 canSubmitRecords: canSubmitRecords,
+//                 canEdit: canEdit
+//             }
+//         }
+//     });
+// };
 
+/**
+ * @param {string} targetId
+ * @param {{email: string, canSubmitRecords: boolean, canEdit: boolean}} user
+ * @param {function(string)} callback
+ */
+export const tryAddUser = (targetId, user, callback) => {
+    makeRequest(endpoints.POST.TARGET_id_USER, {
+        targetId: targetId,
+        body: {
+            ...user
+        }
+    }, callback);
 };
 
 // UPDATE/PATCH
@@ -164,8 +188,26 @@ export const updateQuote = (targetId, quoteId, text) => {
     });
 };
 
-export const updateUser = (targetId, {userId, canSubmitRecords, canEdit}) => {
+/**
+ * @param {string} targetId
+ * @param {{id: string, canSubmitRecords: boolean, canEdit: boolean}} user
+ */
+export const updateUser = (targetId, user) => {
+    store.dispatch({
+        type: features.MERGE_USERS, payload: {
+            targetId: targetId,
+            user: user
+        }
+    });
 
+    makeRequest(endpoints.PATCH.TARGET_id_USER_id, {
+        targetId: targetId,
+        userId: user.id,
+        body: {
+            canSubmitRecords: user.canSubmitRecords,
+            canEdit: user.canEdit
+        }
+    })
 };
 
 // DELETE
@@ -209,5 +251,15 @@ export const deleteLatestRecord = (targetId, quoteId) => {
 }
 
 export const removeUser = (targetId, userId) => {
+    store.dispatch({
+        type: features.FILTER_OUT_USER, payload: {
+            targetId: targetId,
+            userId: userId
+        }
+    });
 
+    makeRequest(endpoints.DELETE.TARGET_id_USER_id, {
+        targetId: targetId,
+        userId: userId
+    })
 }

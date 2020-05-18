@@ -1,5 +1,5 @@
 import Button from "@material-ui/core/Button";
-import { setLinkProps } from "hookrouter";
+import { navigate } from "hookrouter";
 import Chip from "@material-ui/core/Chip";
 import React from "react";
 import Link from "@material-ui/core/Link";
@@ -41,5 +41,8 @@ export const LinkedChip = (props) => {
 };
 
 export const LinkedLink = (props) => {
-    return <Link {...setLinkProps(props)}/>;
+    return <Link {...props} onClick={event => {
+        event.preventDefault();
+        navigate(props.href);
+    }}/>;
 };

@@ -10,8 +10,8 @@ const OverviewSummary = (props) => {
             <PageTitle title="Zusammenfassung"/>
             <Caption text={`${props.quotesSummarized.amountQuotes} Sprüche und insgesamt ${props.quotesSummarized.totalRecords} Einträge seit dem ${moment(props.createdOn).format("L")}`}/>
             <HorizontalButtonGroup buttons={[
-                { href: "insert", text: "Eintragen", disabled: !props.permissions.canSubmitRecords },
-                { href: "quotes", text: "Sprüche" }
+                { href: "./insert", text: "Eintragen", disabled: !props.permissions.canSubmitRecords },
+                { href: "./quotes", text: "Sprüche" }
             ]}/>
         </Fragment>
     );

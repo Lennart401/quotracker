@@ -20,7 +20,7 @@ const InsertPage = (props) => {
     return (
         <PageWrapper>
             <PageTitle title="Eintragen"/>
-            <BackLink href={"overview"}/>
+            <BackLink href={"./overview"}/>
             {stats && (
                 <InsertButtonsWrapper targetId={props.targetId} quotes={stats.today}/>
             )}

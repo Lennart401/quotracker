@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3e1d57c44e841044e5b5d637a6f5cc79",
+    "revision": "6a57d59201f7ad57b3aecf52ddb56d7c",
     "url": "/quotracker/index.html"
   },
   {
-    "revision": "ecd74727a1b81ddc36be",
+    "revision": "6a93eaee50b4865e2bd9",
     "url": "/quotracker/static/css/main.797c6ce9.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quotracker/static/js/2.29c679b6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ecd74727a1b81ddc36be",
-    "url": "/quotracker/static/js/main.bb2364ef.chunk.js"
+    "revision": "6a93eaee50b4865e2bd9",
+    "url": "/quotracker/static/js/main.0a26180a.chunk.js"
   },
   {
     "revision": "26e39b57e911d460b543",

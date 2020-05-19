@@ -6,7 +6,7 @@ import PageWrapper from "../../components/shared/page-wrapper";
 import PageTitle from "../../components/shared/page-title";
 
 const NotFoundPage = () => {
-    useTitle("404 - Nicht gefunden - SLv2");
+    useTitle("404 - Nicht gefunden - quotracker");
     return (
         <PageWrapper>
             <PageTitle title="404 - Seite nicht gefunden"/>

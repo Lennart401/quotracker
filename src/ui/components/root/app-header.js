@@ -36,7 +36,7 @@ const AppHeader = () => {
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
                         <A href="/" className="link-no-style text-white">
-                            SLv2
+                            quotracker
                         </A>
                     </Typography>
                     {isAuthenticated && (

@@ -18,7 +18,7 @@ export const QUOTES_EDIT_DIALOG_NAME = "quote-edit";
 const MAX_QUOTE_LENGTH = 100;
 
 const QuotesPage = (props) => {
-    useTitle("Sprüche - SLv2");
+    useTitle("Sprüche - quotracker");
     const quotes = useQuotes(props.targetId)
     const dialogState = useDialogState(QUOTES_CONFIRM_DIALOG_NAME);
     const users = useUsers(props.targetId);

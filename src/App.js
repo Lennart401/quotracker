@@ -14,6 +14,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import blue from "@material-ui/core/colors/blue";
 import MainLoader from "./ui/components/root/main-loader";
 import StateSnackbar from "./ui/components/root/state-snackbar";
+import Typography from "@material-ui/core/Typography";
 
 const theme = createMuiTheme({
     palette: {
@@ -29,10 +30,15 @@ const routes = {
     "/logout": () => <LogoutPage/>,
 };
 
+const basePath = process.env.PUBLIC_URL;
 const publicPaths = [
+    "",
     "/",
     "/logout",
-    "/404"
+    "/404",
+    `${basePath}`,
+    `${basePath}/logout`,
+    `${basePath}/404`
 ];
 
 const App = () => {
@@ -75,6 +81,12 @@ const App = () => {
             {/*<ErrorSnackbar open={!!error} error={error}/>*/}
             <StateSnackbar errorState="global"/>
             {routeResult || <NotFoundPage/>}
+            <Typography variant="body2" style={{
+                position: "fixed",
+                left: 0,
+                bottom: 0,
+                color: "#ccc"
+            }}>Version 0.6.8</Typography>
         </ThemeProvider>
     );
 };

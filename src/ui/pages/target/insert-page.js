@@ -7,7 +7,7 @@ import InsertButtonsWrapper from "../../components/target/insert/insert-buttons-
 import { useStats } from "../../../logic/state-management/api/hooks";
 
 const InsertPage = (props) => {
-    useTitle("Eintragen - SLv2");
+    useTitle("Eintragen - quotracker");
     // console.log("InsertPage begin");
     const stats = useStats(props.targetId);
     // console.log("InsertPage end");

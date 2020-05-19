@@ -10,7 +10,6 @@ import { deleteTarget, updateTarget } from "../../../logic/state-management/api/
 import EditTargetDialog from "../../components/shared/target/edit-target-dialog";
 import AddTargetPanel from "../../components/top-level/all-targets/add-target-panel";
 
-const allTargetsPageTitle = "Alle Targets";
 export const TARGET_DELETE_DIALOG_NAME = "target-delete-confirm";
 export const TARGET_EDIT_DIALOG_NAME = "target-edit";
 
@@ -18,7 +17,7 @@ export const MAX_TITLE_LENGTH = 70;
 export const MAX_DESCRIPTION_LENGTH = 280;
 
 const AllTargetsPage = () => {
-    useTitle(`${allTargetsPageTitle} - SLv2`);
+    useTitle("Alle Targets - quotracker");
     const targets = useTargets();
     const deleteDialogState = useDialogState(TARGET_DELETE_DIALOG_NAME);
 
@@ -33,7 +32,7 @@ const AllTargetsPage = () => {
         <PageWrapper>
             {targets && (
                 <div>
-                    <PageTitle title={allTargetsPageTitle}/>
+                    <PageTitle title="Alle Targets"/>
                     {Object.entries(targets).map(([id, target]) => {
                         if (target.users) {
                             return <TargetCard id={id} targetInfo={target.info} targetUsers={target.users} key={id}/>;

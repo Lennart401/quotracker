@@ -6,7 +6,7 @@ import BackLink from "../../components/shared/back-link";
 import Typography from "@material-ui/core/Typography";
 
 const StatsPage = (props) => {
-    useTitle("Statistik - SLv2");
+    useTitle("Statistik - quotracker");
     // const quotes = useQuotes(props.targetId, 30);
     // const records = useRecords(props.targetId);
 

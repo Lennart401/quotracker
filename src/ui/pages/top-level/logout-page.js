@@ -6,7 +6,7 @@ import PageWrapper from "../../components/shared/page-wrapper";
 import PageTitle from "../../components/shared/page-title";
 
 const LogoutPage = () => {
-    useTitle("Logout - SLv2");
+    useTitle("Logout - quotracker");
     return (
         <PageWrapper>
             <PageTitle title="Ausgeloggt"/>

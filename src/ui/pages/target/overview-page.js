@@ -38,7 +38,7 @@ const buildSimpleStats = (quotes, stats) => {
 }
 
 const OverviewPage = (props) => {
-    useTitle("Übersicht - SLv2");
+    useTitle("Übersicht - quotracker");
     const target = useOverview(props.targetId);
     const permissions = usePermissions(target?.users ? target.users : []);
 

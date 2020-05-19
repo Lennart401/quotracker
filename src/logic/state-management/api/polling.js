@@ -10,7 +10,7 @@ import { getStateOnce } from "./hooks";
 
 // axios.defaults.proxy.host = "http://localhost";
 // axios.defaults.proxy.post = 8080;
-axios.defaults.baseURL = "http://localhost:8080/api/v2";
+axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:8080/api/v2" : "http://localhost:8080:/api/v2";
 axios.defaults.timeout = 5000;
 
 const DISABLE_SERVER_ACCESS = false;
@@ -197,11 +197,11 @@ export const poll = (endpoints, properties) => {
         oneTimePoll(endpoints, properties);
     }, interval * 1000);
 
-    console.log(`poll subscribe (${id}) using interval ${interval}`);
+    log(`poll subscribe (${id}) using interval ${interval}`);
 
     // return unsubscribe function
     return () => {
-        console.log(`poll unsubscribe (${id})`);
+        log(`poll unsubscribe (${id})`);
         clearInterval(id);
     };
 };
@@ -246,8 +246,8 @@ export const oneTimePoll = (endpoints, properties) => {
                 // console.log(response.statusText);
                 // console.log(response.headers);
                 // console.log(response.config);
-                console.log(response.data);
-                console.log(response.status);
+                // console.log(response.data);
+                log(response.status);
             });
             hideLoadingBar();
         }))
@@ -279,9 +279,9 @@ export const makeRequest = (endpoint, properties, callback = null) => {
 
         const token = await getTokenOnce();
 
-        console.log(endpoint.method);
-        console.log(endpoint.url(properties));
-        console.log(properties.body);
+        log(endpoint.method);
+        log(endpoint.url(properties));
+        log(properties.body);
 
         axios({
             method: endpoint.method,
@@ -302,8 +302,8 @@ export const makeRequest = (endpoint, properties, callback = null) => {
 
             if (callback) callback(response.data.status);
 
-            console.log(response.status);
-            console.log(response.data);
+            log(response.status);
+            log(response.data);
             hideLoadingBar();
         })
         .catch((error) => {
@@ -315,14 +315,21 @@ export const makeRequest = (endpoint, properties, callback = null) => {
 };
 
 const handleError = (error) => {
-    console.log("ERROR"); // @TODO remove this bit
-    console.log(error);
-    console.log(JSON.stringify(error.response));
+    log("ERROR"); // @TODO remove this bit
+    log(error);
+    log(JSON.stringify(error.response));
 
     if (error.response?.data?.status) {
         let textError = errorLookup[error.response.data.status];
         setErrorMessage( textError ? textError : `Unbekannter Fehler: ${error.response.data.status}`);
     } else {
         setErrorMessage("Es ist ein unbekannter Fehler aufgetreten");
+    }
+};
+
+const isDevelopment = process.env.NODE_ENV === "development";
+const log = (message) => {
+    if (isDevelopment && false) {
+        console.log(message);
     }
 };

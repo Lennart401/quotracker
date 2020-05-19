@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './service-worker';
 import { Auth0Provider } from "./react-auth0-spa";
-import config from "./auth_config.json";
 import { navigate, setBasepath } from "hookrouter";
 import { Provider } from "react-redux";
 import { store } from "./logic/state-management/store/store";
@@ -25,6 +24,13 @@ const onRedirectCallback = (appState) => {
 store.injectReducer("loadingBar", loadingBarReducer);
 
 moment().locale("de");
+
+let config;
+if (process.env.NODE_ENV === "development") {
+    config = require("./auth_config.json");
+} else {
+    config = require("./auth_config_public.json");
+}
 
 ReactDOM.render(
     <Provider store={store}>

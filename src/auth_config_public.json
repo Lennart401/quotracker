@@ -1,5 +1,5 @@
 {
-  "domain": "slv2auth0test.eu.auth0.com",
-  "clientId": "RkZ6JIMlXhI999T2unw3C5JgSDuI1ATu",
-  "audience": "http://localhost:8080"
+  "domain": "quotracker.eu.auth0.com",
+  "clientId": "4yrrz6hbGFLgkjm67K2NU9dIWCKvjnmd",
+  "audience": "https://quotracker.herokuapp.com"
 }

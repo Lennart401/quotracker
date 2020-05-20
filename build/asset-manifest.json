@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/quotracker/static/css/main.797c6ce9.chunk.css",
-    "main.js": "/quotracker/static/js/main.bfc42a8c.chunk.js",
-    "main.js.map": "/quotracker/static/js/main.bfc42a8c.chunk.js.map",
+    "main.js": "/quotracker/static/js/main.31af5ce6.chunk.js",
+    "main.js.map": "/quotracker/static/js/main.31af5ce6.chunk.js.map",
     "runtime-main.js": "/quotracker/static/js/runtime-main.95fd54b3.js",
     "runtime-main.js.map": "/quotracker/static/js/runtime-main.95fd54b3.js.map",
     "static/js/2.29c679b6.chunk.js": "/quotracker/static/js/2.29c679b6.chunk.js",
     "static/js/2.29c679b6.chunk.js.map": "/quotracker/static/js/2.29c679b6.chunk.js.map",
     "index.html": "/quotracker/index.html",
-    "precache-manifest.a9cb71aaa9d4ecc796992b4d96538d72.js": "/quotracker/precache-manifest.a9cb71aaa9d4ecc796992b4d96538d72.js",
+    "precache-manifest.6f53d641c8395cd98025c0963d3ebd11.js": "/quotracker/precache-manifest.6f53d641c8395cd98025c0963d3ebd11.js",
     "service-worker.js": "/quotracker/service-worker.js",
     "static/css/main.797c6ce9.chunk.css.map": "/quotracker/static/css/main.797c6ce9.chunk.css.map",
     "static/js/2.29c679b6.chunk.js.LICENSE.txt": "/quotracker/static/js/2.29c679b6.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.95fd54b3.js",
     "static/js/2.29c679b6.chunk.js",
     "static/css/main.797c6ce9.chunk.css",
-    "static/js/main.bfc42a8c.chunk.js"
+    "static/js/main.31af5ce6.chunk.js"
   ]
 }

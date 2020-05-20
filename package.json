@@ -1,6 +1,6 @@
 {
   "name": "sloddilabertv2",
-  "version": "0.6.9",
+  "version": "0.6.11",
   "private": true,
   "homepage": "/quotracker",
   "dependencies": {
@@ -30,7 +30,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -m \"Automated deploy commit\""
   },
   "eslintConfig": {
     "extends": "react-app"

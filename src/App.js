@@ -15,6 +15,7 @@ import blue from "@material-ui/core/colors/blue";
 import MainLoader from "./ui/components/root/main-loader";
 import StateSnackbar from "./ui/components/root/state-snackbar";
 import Typography from "@material-ui/core/Typography";
+import {version} from "./version";
 
 const theme = createMuiTheme({
     palette: {
@@ -86,7 +87,7 @@ const App = () => {
                 left: 0,
                 bottom: 0,
                 color: "#ccc"
-            }}>Version 0.6.11</Typography>
+            }}>Version ${version}</Typography>
         </ThemeProvider>
     );
 };

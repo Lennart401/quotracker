@@ -1,6 +1,6 @@
 {
   "name": "sloddilabertv2",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "private": true,
   "homepage": "/quotracker",
   "dependencies": {
@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "genversion --es6 src/version.js && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "genversion": "^2.2.1",
     "gh-pages": "^2.2.0"
   }
 }

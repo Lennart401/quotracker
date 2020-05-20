@@ -86,7 +86,7 @@ const App = () => {
                 left: 0,
                 bottom: 0,
                 color: "#ccc"
-            }}>Version 0.6.8</Typography>
+            }}>Version 0.6.9</Typography>
         </ThemeProvider>
     );
 };

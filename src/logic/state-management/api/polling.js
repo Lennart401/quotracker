@@ -10,8 +10,8 @@ import { getStateOnce } from "./hooks";
 
 // axios.defaults.proxy.host = "http://localhost";
 // axios.defaults.proxy.post = 8080;
-axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:8080/api/v2" : "http://localhost:8080:/api/v2";
-axios.defaults.timeout = 5000;
+axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:8080/api/v2" : "https://quotracker.herokuapp.com/api/v2";
+axios.defaults.timeout = 14000;
 
 const DISABLE_SERVER_ACCESS = false;
 

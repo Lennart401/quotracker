@@ -82,12 +82,12 @@ const App = () => {
             {/*<ErrorSnackbar open={!!error} error={error}/>*/}
             <StateSnackbar errorState="global"/>
             {routeResult || <NotFoundPage/>}
-            <Typography variant="body2" style={{
+            <Typography variant="caption" style={{
                 position: "fixed",
                 left: 0,
                 bottom: 0,
                 color: "#ccc"
-            }}>Version ${version}</Typography>
+            }}>Version {version}</Typography>
         </ThemeProvider>
     );
 };

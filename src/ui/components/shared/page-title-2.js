@@ -5,7 +5,7 @@ import Box from "@material-ui/core/Box";
 const PageTitle2 = (props) => {
     return (
         <Box className="page-title-2">
-            <Typography variant="h4">{props.title}{props.children}</Typography>
+            <Typography variant="h4" component="h2">{props.title}{props.children}</Typography>
         </Box>
     );
 }

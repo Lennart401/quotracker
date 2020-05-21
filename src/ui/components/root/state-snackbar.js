@@ -1,14 +1,10 @@
 import React, { useLayoutEffect, useState } from "react";
 import { clearErrorMessage, useErrorMessage } from "../../../logic/state-management/error-message";
 import Snackbar from "@material-ui/core/Snackbar";
-import MuiAlert from "@material-ui/lab/Alert";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
-
-function Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
+import { Alert } from "./alert";
 
 /**
  * Use can either use useAlert = true with severity OR action with actionName

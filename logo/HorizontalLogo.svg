@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="213.08653mm"
+   height="70.016006mm"
+   viewBox="0 0 213.08653 70.016006"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="HorizontalLogo.svg">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4664"
+         style="fill:#191919;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="164.78855"
+     inkscape:cy="121.94035"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g4965"
+     showgrid="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-32.41699,-137.35678)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.69444466px;line-height:1.25;font-family:'Sitka Text';-inkscape-font-specification:'Sitka Text Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.29688013"
+       x="107.4977"
+       y="178.22842"
+       id="text4642"><tspan
+         sodipodi:role="line"
+         id="tspan4640"
+         x="107.4977"
+         y="178.22842"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.69444466px;font-family:'Sitka Text';-inkscape-font-specification:'Sitka Text Bold';fill:#191919;fill-opacity:1;stroke-width:0.29688013">quotracker</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="22.317005"
+       y="120.06757"
+       id="text4955"><tspan
+         sodipodi:role="line"
+         id="tspan4953"
+         x="22.317005"
+         y="129.43134"
+         style="stroke-width:0.26458332" /></text>
+    <g
+       id="g4965">
+      <g
+         id="g4970"
+         transform="translate(4.9999987,-3.0000021)">
+        <rect
+           id="rect3833"
+           width="49.70945"
+           height="49.70945"
+           x="-103.301"
+           y="144.70226"
+           style="fill:#1976d2;fill-opacity:1;stroke-width:0.31348303"
+           transform="rotate(-45)"
+           ry="7.601871" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:67.02777863px;line-height:1.25;font-family:'Britannic Bold';-inkscape-font-specification:'Britannic Bold, ';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="48.32262"
+           y="176.44482"
+           id="text4959"><tspan
+             sodipodi:role="line"
+             id="tspan4957"
+             x="48.32262"
+             y="176.44482"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:67.02777863px;font-family:'Britannic Bold';-inkscape-font-specification:'Britannic Bold, ';fill:#ffffff;fill-opacity:1;stroke-width:0.26458332">„</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

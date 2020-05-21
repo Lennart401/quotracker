@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ad5b6b8cd8e3b1124606e72230402de8",
+    "revision": "a85ccf32a3c773be2a091c6479ce7b05",
     "url": "/quotracker/index.html"
   },
   {

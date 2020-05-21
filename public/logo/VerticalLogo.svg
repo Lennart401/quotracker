@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="74.016006mm"
-   height="74.016006mm"
-   viewBox="0 0 74.016006 74.016006"
+   width="142.08389mm"
+   height="92.047531mm"
+   viewBox="0 0 142.08389 92.047531"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   sodipodi:docname="StandaloneLogo.svg">
+   sodipodi:docname="VerticalLogo.svg">
   <defs
      id="defs2">
     <marker
@@ -42,8 +42,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="164.78855"
-     inkscape:cy="121.94035"
+     inkscape:cx="176.24435"
+     inkscape:cy="153.7255"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -68,7 +68,18 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-32.41699,-133.35678)">
+     transform="translate(-82.839879,-134.42586)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.69444466px;line-height:1.25;font-family:'Sitka Text';-inkscape-font-specification:'Sitka Text Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.29688013"
+       x="86.917953"
+       y="216.05159"
+       id="text4642"><tspan
+         sodipodi:role="line"
+         id="tspan4640"
+         x="86.917953"
+         y="216.05159"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.69444466px;font-family:'Sitka Text';-inkscape-font-specification:'Sitka Text Bold';fill:#191919;fill-opacity:1;stroke-width:0.29688013">quotracker</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -82,7 +93,7 @@
          style="stroke-width:0.26458332" /></text>
     <g
        id="g4965"
-       transform="translate(4.9999976,-5.0000021)">
+       transform="matrix(0.86222362,0,0,0.86222362,98.333073,15.820257)">
       <g
          id="g4970">
         <rect

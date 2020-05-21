@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="74.016006mm"
-   height="74.016006mm"
-   viewBox="0 0 74.016006 74.016006"
+   width="213.08653mm"
+   height="70.016006mm"
+   viewBox="0 0 213.08653 70.016006"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   sodipodi:docname="StandaloneLogo.svg">
+   sodipodi:docname="HorizontalLogo.svg">
   <defs
      id="defs2">
     <marker
@@ -45,7 +45,7 @@
      inkscape:cx="164.78855"
      inkscape:cy="121.94035"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g4965"
      showgrid="true"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
@@ -68,7 +68,18 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-32.41699,-133.35678)">
+     transform="translate(-32.41699,-137.35678)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.69444466px;line-height:1.25;font-family:'Sitka Text';-inkscape-font-specification:'Sitka Text Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.29688013"
+       x="107.4977"
+       y="178.22842"
+       id="text4642"><tspan
+         sodipodi:role="line"
+         id="tspan4640"
+         x="107.4977"
+         y="178.22842"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.69444466px;font-family:'Sitka Text';-inkscape-font-specification:'Sitka Text Bold';fill:#191919;fill-opacity:1;stroke-width:0.29688013">quotracker</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -81,10 +92,10 @@
          y="129.43134"
          style="stroke-width:0.26458332" /></text>
     <g
-       id="g4965"
-       transform="translate(4.9999976,-5.0000021)">
+       id="g4965">
       <g
-         id="g4970">
+         id="g4970"
+         transform="translate(4.9999987,-3.0000021)">
         <rect
            id="rect3833"
            width="49.70945"
